@@ -1,0 +1,26 @@
+{
+  "product_name": "Renewix",
+  "domain": "renewix.co",
+  "domain_price": 12,
+  "domain_available": "unknown",
+  "alternatives": [],
+  "palette_name": "coral",
+  "brand": {
+    "primary": "#f43f5e",
+    "primaryDark": "#e11d48",
+    "accent": "#fb923c",
+    "gradient": "from-rose-500 to-orange-400",
+    "gradientHover": "from-rose-400 to-orange-300",
+    "surface": "#0A0A0F",
+    "surfaceLight": "#111118"
+  },
+  "tagline": "Boost renewals, maximize SaaS revenue",
+  "mission": "We empower mid-sized SaaS companies to regain control over subscription renewals by eliminating manual inefficiencies and preventing revenue leakage.",
+  "description": "Renewix transforms fragmented renewal workflows into a seamless, automated process tailored for mid-sized SaaS teams. Say goodbye to missed renewals and inaccurate forecasts\u2014boost customer lifetime value with precision and confidence.",
+  "logo_initials": "R",
+  "template": "momentum",
+  "competitors": [
+    "lost"
+  ],
+  "vertical": "sales"
+}

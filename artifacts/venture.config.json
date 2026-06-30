@@ -1,0 +1,237 @@
+{
+  "name": "Renewix",
+  "tagline": "Boost renewals, maximize SaaS revenue",
+  "description": "A self-serve renewal opportunity tracker for mid-sized SaaS teams to reduce revenue leakage and improve forecasting without enterprise complexity.",
+  "domain": "renewix.co",
+  "flags": {
+    "waitlistMode": false,
+    "mvpReady": true
+  },
+  "brand": {
+    "primary": "#f43f5e",
+    "primaryDark": "#e11d48",
+    "accent": "#fb923c",
+    "gradient": "from-rose-500 to-orange-400",
+    "gradientHover": "from-rose-400 to-orange-300",
+    "surface": "#0A0A0F",
+    "surfaceLight": "#111118"
+  },
+  "landing": {
+    "headline": "Never Miss a Renewal Again",
+    "subheadline": "Centralize your renewal pipeline, track risk, and automate reminders to maximize SaaS revenue retention.",
+    "painStats": [
+      {
+        "stat": "30%",
+        "label": "of SaaS revenue lost to missed renewals"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Add Renewal Opportunities",
+        "desc": "Quickly enter your customers and renewal details."
+      },
+      {
+        "title": "Track Risk & Playbooks",
+        "desc": "Document risk factors and actionable steps per renewal."
+      },
+      {
+        "title": "Get Automated Reminders",
+        "desc": "Receive timely email alerts so nothing slips through."
+      }
+    ],
+    "painPoints": [
+      "Manual renewal tracking causes missed revenue",
+      "Scattered data makes forecasting impossible",
+      "No affordable, simple tool built for mid-sized SaaS teams"
+    ],
+    "pricing": [
+      {
+        "plan": "Starter",
+        "price": "$19",
+        "period": "/mo",
+        "desc": "For small SaaS teams and solopreneurs starting out",
+        "features": [
+          "Up to 5 users",
+          "Up to 100 renewal opportunities per month",
+          "Renewal Opportunity Dashboard",
+          "Risk & Playbook Notes",
+          "Automated Renewal Reminders",
+          "Basic email support"
+        ],
+        "highlighted": true
+      },
+      {
+        "plan": "Growth",
+        "price": "$39",
+        "period": "/mo",
+        "desc": "For growing SaaS teams needing scale and integrations",
+        "features": [
+          "Up to 15 users",
+          "Up to 500 renewal opportunities per month",
+          "All Starter features",
+          "Priority support",
+          "Integrations (Slack notifications, enhanced email workflows)"
+        ],
+        "highlighted": false
+      },
+      {
+        "plan": "Pro",
+        "price": "$49",
+        "period": "/mo",
+        "desc": "For larger SMB SaaS teams requiring full automation and insights",
+        "features": [
+          "Unlimited users",
+          "Unlimited renewal opportunities",
+          "All Growth features",
+          "Advanced analytics dashboard",
+          "AI-powered renewal risk scoring and recommended next actions (post-MVP)"
+        ],
+        "highlighted": false
+      }
+    ],
+    "finalCta": {
+      "headline": "Start tracking your renewals today",
+      "subheadline": "Sign up now and get immediate value with our simple, affordable tool."
+    },
+    "primaryCta": "Try it Free",
+    "secondaryCta": "View Pricing",
+    "navCta": "Try it Free",
+    "socialProofLine": "Trusted by growing teams everywhere",
+    "waitlistCardTitle": "Get early access",
+    "waitlistCardSubtitle": "Be among the first to try Renewix.",
+    "finalCtaButton": "Try it Free",
+    "features": [],
+    "testimonials": [],
+    "faq": [],
+    "screenshots": [],
+    "template": "warmth"
+  },
+  "dashboard": {
+    "navItems": [
+      {
+        "label": "Dashboard",
+        "href": "/dashboard",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "label": "Renewal Opportunities",
+        "href": "/dashboard/opportunities",
+        "icon": "Search"
+      },
+      {
+        "label": "Settings",
+        "href": "/dashboard/settings/profile",
+        "icon": "Settings"
+      }
+    ],
+    "features": [
+      {
+        "name": "Renewal Opportunities",
+        "slug": "opportunities",
+        "description": "Manage and track all your renewal opportunities with risk and playbook details.",
+        "table": "PREFIX_renewal_opportunities",
+        "fields": [
+          {
+            "name": "customer_name",
+            "type": "text",
+            "label": "Customer Name",
+            "required": true
+          },
+          {
+            "name": "renewal_date",
+            "type": "date",
+            "label": "Renewal Date",
+            "required": true
+          },
+          {
+            "name": "contract_value",
+            "type": "numeric",
+            "label": "Contract Value",
+            "required": true
+          },
+          {
+            "name": "status",
+            "type": "enum",
+            "label": "Status",
+            "required": true
+          },
+          {
+            "name": "risk_level",
+            "type": "enum",
+            "label": "Risk Level",
+            "required": true
+          },
+          {
+            "name": "next_action",
+            "type": "text",
+            "label": "Next Action",
+            "required": false
+          },
+          {
+            "name": "assigned_user_id",
+            "type": "uuid",
+            "label": "Assigned User",
+            "required": true
+          }
+        ],
+        "crud": {
+          "create": true,
+          "read": true,
+          "update": true,
+          "delete": true
+        },
+        "stats": [
+          {
+            "label": "Total",
+            "field": "count"
+          },
+          {
+            "label": "High Risk",
+            "field": "high_risk_count"
+          },
+          {
+            "label": "Due This Month",
+            "field": "due_this_month_count"
+          },
+          {
+            "label": "Renewal Success Rate",
+            "field": "renewal_success_rate"
+          }
+        ],
+        "defaultSort": "renewal_date",
+        "searchable": [
+          "customer_name"
+        ]
+      }
+    ]
+  },
+  "analytics": {
+    "provider": "posthog",
+    "errorMonitoring": "sentry",
+    "capturePageViews": true,
+    "captureWaitlist": true
+  },
+  "experiments": {
+    "landingPage": {
+      "key": "landing_page_v1",
+      "cookieName": "vo_exp_landing_page",
+      "variants": [
+        {
+          "key": "control",
+          "weight": 50
+        },
+        {
+          "key": "variant_b",
+          "weight": 50,
+          "overrides": {
+            "headline": "Never Miss a Renewal Again",
+            "subheadline": "Centralize your renewal pipeline, track risk, and automate reminders to maximize SaaS revenue retention.",
+            "primaryCta": "Start Free",
+            "navCta": "Start Free",
+            "finalCtaButton": "Start Free"
+          }
+        }
+      ]
+    }
+  }
+}
