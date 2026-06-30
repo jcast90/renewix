@@ -7,10 +7,10 @@
 
 ## Repository
 
-No GitHub repo has been created yet. To get the code:
-1. Connect your GitHub integration at venture-os.co → Settings → Integrations
-2. Or create the repo manually and push the starter folder
-3. Then open in Claude Code
+```bash
+git clone https://github.com/jcast90/renewix
+cd renewix
+```
 
 ## Stack
 - **Frontend**: Next.js 16 App Router + TypeScript + Tailwind CSS v4 + shadcn/ui (base-nova)
